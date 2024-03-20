@@ -7,18 +7,19 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <TextView
-        android:id="@+id/tvEspañol"
+        android:id="@+id/tvIdioma"
         android:layout_width="343dp"
         android:layout_height="78dp"
         android:text="Palabra en Español"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintHorizontal_bias="0.764"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.263" />
+        app:layout_constraintTop_toBottomOf="@+id/etEspa"
+        app:layout_constraintVertical_bias="0.232" />
 
     <Button
         android:id="@+id/btTraduce"
@@ -28,6 +29,17 @@
         android:text="Traducir"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvEspañol" />
+        app:layout_constraintTop_toBottomOf="@+id/tvIdioma" />
+
+    <EditText
+        android:id="@+id/etEspa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="144dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="82dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

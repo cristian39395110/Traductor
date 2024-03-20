@@ -9,7 +9,7 @@
 
 
     <TextView
-        android:id="@+id/tvEspañol"
+        android:id="@+id/tvIdioma"
         android:layout_width="343dp"
         android:layout_height="78dp"
         android:text="Palabra en Inlges"

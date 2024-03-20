@@ -1,18 +1,18 @@
 package com.softmaky.traductor;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.softmaky.traductor.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
+    private TracuctorViewModel mv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,10 +20,14 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        mv= ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(TracuctorViewModel.class);
+
         binding.btTraduce.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String palabraEspa = binding.tvEspaOl.getText().toString();
+                String palabraEspa = binding.etEspa.getText().toString();
+               mv.traducido(palabraEspa);
+
             }
         });
     }
